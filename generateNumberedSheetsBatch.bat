@@ -37,26 +37,13 @@ REM php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --in
 REM php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=5900 --numberOfSheets=100
 
 @rem 2019/04/20
-php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6000 --numberOfSheets=100
-php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6100 --numberOfSheets=100
-php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6200 --numberOfSheets=100
-php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6300 --numberOfSheets=100
+php makeNumberedSheets.php --prefix="neil-" --initialNumber=6000 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 
 @rem START HERE -->
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6400 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6500 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6600 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6700 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6800 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=6900 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7000 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7100 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7200 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7300 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7400 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7500 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7600 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7700 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7800 --numberOfSheets=100
-@rem php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --initialNumber=7900 --numberOfSheets=100
+@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=6400 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated                                                                                          
+@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=6800 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
+@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=7200 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
+@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=7600 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
+
+
 

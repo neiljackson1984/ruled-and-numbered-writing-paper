@@ -1,0 +1,77 @@
+%
+%This whole thing is highyl hacked together.  I have no idea what most of these commands really do,I just cut and paste from Google searches
+%until eventually I had something that produced the desired output.  It would be good eventually to understand and optimize this latex code.
+%
+%IT is highyl inneficcient to generate each sheet as a separate sheet.  I ought to figure ought how to generate a set of sheets all from this one latex file.
+%-Neil
+%
+%
+
+
+
+\documentclass[letterpaper, 10pt]{article} % for letter size paper 
+%\usepackage[paperwidth=8.5in,  paperheight=11in, vmargin={0.0in,0.0in}, hmargin=0.0in]{geometry}
+% 215.9mm × 279.4mm
+\usepackage{tikz}
+\usepackage{fontspec} \setmainfont{Consolas}
+\def\humanReadableFontSize{8}
+\newcommand{\humanReadableFont}{\fontsize{\humanReadableFontSize}{\humanReadableFontSize}\fontspec{Consolas}}
+\usepackage{ifthen}
+\usepackage{fp} %this is an arithmetic package that allows numerical operations on expressions
+
+%BEGIN REPLACEMENT
+   % This section between the "%BEGIN REPLACEMENT" and "%END REPLACEMENT"
+   % will be replaced by the external script that processes this file
+   \def\initialSheetNumber{6700}
+   \def\numberOfSheets{100}
+   \def\sheetNumberPrefix{neil-}
+%END REPLACEMENT
+
+
+
+\newcommand{\makePage}[1]
+{%
+    \clearpage
+    \pagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]%
+    %
+    \tikzset{normal lines/.style={gray, very thin}} 
+    \tikzset{margin lines/.style={gray, thick}} 
+    \tikzset{mm lines/.style={gray, ultra thin}} 
+    \tikzset{strong lines/.style={black, very thin}} 
+    \tikzset{master lines/.style={black, very thick}} 
+    \tikzset{dashed master lines/.style={loosely dashed, black, very thick}} %
+    %
+    \node at (current page.south west){
+      \begin{tikzpicture}[remember picture, overlay]%
+    %
+          \foreach \y in {0.71, 1.41,...,25.56}
+          \draw[style=normal lines](0,\y) -- (8.5in, \y);
+        \draw[style=normal lines] (1.25in,0)--(1.25in,11in);%
+    %
+      \end{tikzpicture}%
+    };%
+    \end{tikzpicture}%
+    \vbox to 0 in {
+    \vspace{-1.58in}
+    \hbox to 6.1 in{\hfill \humanReadableFont{#1} }
+    \vfill
+    \hbox{}
+    }
+}
+
+%
+%This started out as a template from http://michaelgoerz.net/notes/printable-paper-with-latex-and-tikz.html , which I have modified
+%for my own purposes.
+% -Neil Jackson
+
+\begin{document}
+\FPset\thisSheetNumber\initialSheetNumber
+\FPeval\finalSheetNumber{round(\initialSheetNumber + \numberOfSheets - 1 :0)}
+\FPeval\finalSheetNumberPlusOne{round(\finalSheetNumber + 1 :0)}
+\whiledo {\FPprint\thisSheetNumber < \FPprint\finalSheetNumberPlusOne}%
+{%
+    \makePage{\sheetNumberPrefix\FPprint\thisSheetNumber}%
+    \FPeval\thisSheetNumber{round(\thisSheetNumber + 1 :0)}%
+}    
+\end{document}
