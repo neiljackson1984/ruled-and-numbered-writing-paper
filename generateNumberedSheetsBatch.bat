@@ -40,10 +40,12 @@ REM php makeNumberedSheets.php --templateFile=template.tex --prefix="neil-" --in
 @rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=6000 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 
 @rem 2019/09/13
-php makeNumberedSheets.php --prefix="neil-" --initialNumber=6400 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated                                                                                          
+@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=6400 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated                                                                                          
+
+@rem 2020/11/02
+php makeNumberedSheets.php --prefix="neil-" --initialNumber=6800 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 
 @rem START HERE -->
-@rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=6800 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 @rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=7200 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 @rem php makeNumberedSheets.php --prefix="neil-" --initialNumber=7600 --numberOfSheets=400 --templateFile=ruled-writing-paper.tex  --outputDirectory=generated
 
