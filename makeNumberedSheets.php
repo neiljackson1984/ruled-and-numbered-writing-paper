@@ -84,7 +84,12 @@ echo "generating the pdf file...\n";
 
 // Rather than run miktex-xetex twice explicitly, I will use latexmk to handle any repeated running that might be necessary:
 // exec("latexmk -xelatex -gg --interaction=nonstopmode --output-directory=\"$tempDirectory\" --aux-directory=\"$tempDirectory\" -jobname=\"$uniqeFilenameRoot\" \"$texFile\" 2>&1");
-exec("latexmk -xelatex -gg --interaction=nonstopmode --output-directory=\"$tempDirectory\" --aux-directory=\"$tempDirectory\" -jobname=\"$uniqeFilenameRoot\" \"$texFile\"");
+// exec("latexmk -xelatex -gg --interaction=nonstopmode --output-directory=\"$tempDirectory\" --aux-directory=\"$tempDirectory\" -jobname=\"$uniqeFilenameRoot\" \"$texFile\"");
+
+//2019/09/13 - latexmk is complainng about path names containing backslashes.  Therefore, I will run latexmk with the temp directory being the current working directory
+chdir(dirname($texFile));
+// exec("latexmk -xelatex -gg --interaction=nonstopmode --output-directory=\".\" --aux-directory=\".\" -jobname=\"$uniqeFilenameRoot\" \"$texFile\"");
+exec("latexmk -xelatex -gg --interaction=nonstopmode --output-directory=\"$tempDirectory\" --aux-directory=\"$tempDirectory\" -jobname=\"$uniqeFilenameRoot\" \"" . basename($texFile) . "\"");
 
 
 echo "Moving the generated pdf to the final output folder ...\n";
