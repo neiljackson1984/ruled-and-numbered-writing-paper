@@ -66,7 +66,7 @@ file_put_contents($texFile, $labelXetex);
 
 //$uniqueRootName = uniqid();
 date_default_timezone_set('America/Los_Angeles');
-$uniqueRootName = date("Y-m-d-H-i") . "_" . "numberedSheets_" . $options['initialNumber']. "_to_". ($options['initialNumber'] +$options['numberOfSheets']-1)  ;
+$uniqueRootName = date("Y-m-d-H-i") . "_" . $options['prefix'] . "_" . $options['initialNumber']. "_to_". ($options['initialNumber'] +$options['numberOfSheets']-1)  ;
 $outputPdfFile = $outputDirectory . "/" . $uniqueRootName . ".pdf";
 
 echo "generating the pdf file...\n";
